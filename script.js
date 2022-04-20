@@ -1,65 +1,74 @@
-* {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
- }
+//constant variables 
 
- body {
-    background-color:red;
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
- }
+onst restartBtn = document.getElementById("restart");
+const prevBtn = document.getElementById("prev");
+const nextBtn = document.getElementById("next");
+const submitBtn = document.getElementById("submit");
+const trueBtn = document.getElementById("True");
+const falseBtn = document.getElementById("False");
+const userScore = document.getElementById("user-score");
+const totalScore = document.getElementById("total-score");
+const questionText = document.getElementById("question-text")
 
- .container {
-    width: 80vw;
-    max-width: 80%;
-    background-color: beige;
-    height: 70vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 8px;
-    text-align: center;
- }
+// Questions 
 
- .score {
-    font-size: large;
-    font-weight: bold;
- }
-  
- #user-score {
-    color: white;
- }
-  
- #total-score {
-    color: white;
- }
+let currentQuestion = 0;
+let score = 0;
+ 
+let questions = [
+   {
+       question: "Who helped Rihanna with her career?",
+       answers: {
+           a: " P. Diddy",
+           b: "Oprah", 
+           c: "Kendrick Lamar",
+           d:  "Jay-Z"
+       },
+       correctAnswer: "d"
+   },
+   {
+       question: "What album had Beyonce's 'Hold Up' song on there?",
+       answers: {
+        a: "4",
+        b:"Dangerously In Love",
+        c: "Beyonce",
+        d: "Lemonade"
+       },
+       correctAnswer: "d"
+   },
+   {
+       question: "Who sang the song Fireworks? ",
+       answers: {
+           a: " Lady Gaga",
+           b: "Pink",
+           c: "Katy Perry", 
+           d: "Taylor Swift"
+       }, 
+       correctAnswer: "c"
+   },
+   question: "What album made Lady Gaga famous?",
+       answers: {
+           a: " ArtPop",
+           b: "Joann",
+           c: "Fame Monster", 
+           d: "Born This Way"
+       },
+       correctAnswer: "c"
+   },
+   question: "What age did Adele get a divorce? ",
+       answers: {
+           a:"21",
+           b: "25";
+           c: "30";
+           d: "31"
+       },
+       correctAnswer: "c"
+   }
+]
 
- .btn {
-    font-size: large;
-    font-weight: bold;
-    background: black;
-    border-radius: 4px;
-    padding: 10px;
-    color: beige;
-    margin: 6px;
-    cursor: pointer;
- }
+// Mutable Variables 
 
- .options {
-    padding: 10px;
-    order: 3;
- }
-  
- .controls {
-    padding: 10px;
-    order: 4;
- }
-
- .hide {
-    display: none;
- }
+restartBtn.addEventListener("click", restart);
+prevBtn.addEventListener("click", prev);
+nextBtn.addEventListener("click",next);
+submitBtn.addEventListener("click",submit);
